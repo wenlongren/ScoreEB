@@ -1,0 +1,4 @@
+import("gaston")
+importFrom("data.table","fread")
+
+export(ScoreEBtest)
