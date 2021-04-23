@@ -35,7 +35,7 @@ Note: setwd("path"), path is where you place the input data. And the example dat
 (3)	*repetition*: for real data analysis, it stands for the number of phenotypes need to be computed; for simulation data analysis, it stands for number of repetitions need to be computed.
 
 **3.	Output Results**\
-The output result is a S x 11 dimension matrix, and it has column names, which are “ntime”, “chr”, “pos”, “id”, “A1”, “A2”, “freq”, “score”, “p”, “lod” and “lrtb”, respectively.
+The output result is a S x 11 dimension matrix, S is the number of detected loci, and it has column names, which are “ntime”, “chr”, “pos”, “id”, “A1”, “A2”, “freq”, “score”, “p”, “lod” and “lrtb”, respectively.\
 Note: “ntime” stands for which phenotype or which repetition that be detected, “lrtb” stands for the effect of marker obtained by likelihood ratio test.
 
 
