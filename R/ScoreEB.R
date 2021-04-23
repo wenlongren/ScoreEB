@@ -1,11 +1,12 @@
-ScoreEBtest <- function(genfile,famfile,bimfile,IniPthreshold,LOD,repetition){
+ScoreEBtest <- function(genfile,famfile,bimfile,phenofile,IniPthreshold,LOD,repetition){
   XX.gen <- as.matrix(fread(file = genfile, sep = "\t",header = FALSE))
   XX.fam <- fread(file = famfile, sep = "\t",header = TRUE)
   XX.bim <- fread(file = bimfile, sep = "\t",header = TRUE)
+  Ytotal <- fread(file = phenofile, sep = ",",header = TRUE)
   XX.gen <- t(XX.gen)
   x <- as.bed.matrix(XX.gen, XX.fam, XX.bim)
   standardize(x) <- "p"
-  Yphe <- as.matrix(x@ped[,6])
+  Ytotal <- as.matrix(Ytotal[,-1])
   Xfix <- matrix(1,dim(x)[1],1)
   KM <- (1/dim(XX.gen)[2])*GRM(x)
   nsam <- dim(XX.gen)[1]
@@ -19,7 +20,7 @@ ScoreEBtest <- function(genfile,famfile,bimfile,IniPthreshold,LOD,repetition){
     resEach <- numeric()
     resEtotal <- numeric()
     resLodTot2 <- numeric()
-    Yphe <- as.matrix(Ytotal[(1+nsam*(ii-1)):(nsam*ii)])
+    Yphe <- as.matrix(Ytotal[,ii])
     resScore <- association.test(x = x,Y = Yphe,X = Xfix, method = "lmm", response = "quantitative", test = "score", K = KM)
     initialChose <- resScore[which(resScore[,8]<=iniP),]
     if(dim(initialChose)[1] > 0){
