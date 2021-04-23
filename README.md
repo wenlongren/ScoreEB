@@ -7,19 +7,19 @@ Perform association test within linear mixed model framework using score test in
 **Installation**\
 install.packages("devtools")\
 install.packages("remotes")\
-remotes::install_github("wenlongren/ScoreEB")\
+remotes::install_github("wenlongren/ScoreEB")
 
-**Running Example**
-library(ScoreEB)
-setwd("C:/Users/ThinkPad/Desktop/Lucky/ScoreEB/GitHub/")
-genfile <- "Sim_200K.gen"
-famfile <- "Sim_200K.fam"
-bimfile <- "Sim_200K.bim"
-phenofile <- "SimY1.csv"
-IniPthreshold <- 0.001
-LOD <- 3.0
-repetition <- 3
-result <- ScoreEBtest(genfile,famfile,bimfile,phenofile,IniPthreshold,LOD,repetition)
+**Running Example**\
+library(ScoreEB)\
+setwd("C:/Users/ThinkPad/Desktop/Lucky/ScoreEB/GitHub/")\
+genfile <- "Sim_200K.gen"\
+famfile <- "Sim_200K.fam"\
+bimfile <- "Sim_200K.bim"\
+phenofile <- "SimY1.csv"\
+IniPthreshold <- 0.001\
+LOD <- 3.0\
+repetition <- 3\
+result <- ScoreEBtest(genfile,famfile,bimfile,phenofile,IniPthreshold,LOD,repetition)\
 Note: setwd("path"), path is where you place the input data. And the example data can be found in "wenlongren/ScoreEB/Data" folder.
 
 **Explanation of Input Parameters and Output Results**
