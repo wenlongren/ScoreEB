@@ -9,6 +9,5 @@ Encoding: UTF-8
 License: GPL-3
 Copyright: See COPYRIGHTS for details.
 Imports: gaston,data.table
-Encoding: UTF-8
 NeedsCompilation: yes
 Depends: R (>= 3.2.0)
