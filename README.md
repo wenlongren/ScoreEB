@@ -30,7 +30,7 @@ Note: setwd("path"), path is where you place the input data. And the example dat
 (4)	*phenofile*: a N x R dimension matrix, R is the number of phenotypes. The row names are individual names, and the column names are the names of phenotypes. And the file format is **.csv**.
 
 **2.	Input three parameters: IniPthreshold, LOD, repetition**\
-(1)	*IniPthreshold*: the p threshold used in the first stage (single locus score test stage), which is much less than bonferroni correction p threshold. IniPthreshold is usually set as 0.01 or 0.001, and it can be modified according to different data.\
+(1)	*IniPthreshold*: the p threshold used in the first stage (single locus score test stage), which is much larger than bonferroni correction p threshold. IniPthreshold is usually set as 0.01 or 0.001, and it can be modified according to different data.\
 (2)	*LOD*: logarithm of odds, which is the threshold used in the second stage (multiple locus empirical bayes stage), that is for the final result. LOD is usually set as 2.5 or 3.0, and it can be modified by users.\
 (3)	*repetition*: for real data analysis, it stands for the number of phenotypes need to be computed; for simulation data analysis, it stands for number of repetitions need to be computed.
 
