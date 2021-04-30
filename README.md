@@ -39,5 +39,4 @@ The output result is a S x 11 dimension matrix, S is the number of detected loci
 Note: “ntime” stands for which phenotype or which repetition that be detected, “lrtb” stands for the effect of marker obtained by likelihood ratio test.
 
 
-**Please refer:\
-WL Ren, et al.(2020) An Efficient Score Test Integrated with Empirical Bayes for Genome-Wide Association Studies.**
+
