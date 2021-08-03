@@ -2,8 +2,8 @@
 **An Efficient Score Test Integrated with Empirical Bayes for Genome-Wide Association Studies**
 
 **Installation**\
-install.packages("devtools")\
 install.packages("remotes")\
+library(remotes)\
 remotes::install_github("wenlongren/ScoreEB")
 
 **Running Example**\
