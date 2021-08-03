@@ -4,7 +4,8 @@
 **Installation**\
 install.packages("remotes")\
 library(remotes)\
-remotes::install_github("wenlongren/ScoreEB")
+remotes::install_github("wenlongren/ScoreEB")\
+{In some cases, use remotes::install_github("wenlongren/ScoreEB@main")}\
 
 **Running Example**\
 library(ScoreEB)\
