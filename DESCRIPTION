@@ -1,0 +1,14 @@
+Package: ScoreEB
+Type: Package
+Title: An Efficient Score Test Integrated with Empirical Bayes for Genome-Wide Association Studies
+Version: 0.1.0
+Author: Wenlong Ren
+Maintainer: Wenlong Ren <wenlongren@ntu.edu.cn>
+Description: Perform association test within linear mixed model framework using score test integrated with empirical bayes for genome-wide association study. Firstly, score test was conducted for each single nucleotide polymorphism (SNP) under linear mixed model framework, taking into account the genetic relatedness and population structure. And then all the potentially associated SNPs were selected with a less stringent criterion. Finally, all the selected SNPs were performed empirical bayes in a multi-locus model to identify the true quantitative trait nucleotide (QTN).
+License: GPL-3
+Imports: data.table
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: yes
+Depends: R (>= 3.2.0)
+RoxygenNote: 7.1.1
