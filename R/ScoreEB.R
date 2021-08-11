@@ -262,7 +262,9 @@ ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, B.Moment
     find.bin.max <- rbind(find.bin.max, matrix(max.score.last,1,))
     
     find.bin.max <- find.bin.max[order(as.numeric(find.bin.max[,5]), decreasing = TRUE),]
-    find.bin.max <- find.bin.max[1:n.sample,]
+    nrow.find.bin.max <- dim(find.bin.max)[1]
+    nrow.select <- min(n.sample, nrow.find.bin.max)
+    find.bin.max <- find.bin.max[1:nrow.select,]
     
     ##Empirical Bayes and likelihood ratio test
     geno.bayes <- X[,as.numeric(find.bin.max[,2])]
