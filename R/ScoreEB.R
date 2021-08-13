@@ -231,8 +231,14 @@ ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, B.Moment
     sigma.e2 <- abs(var.com[2])
     
     ##T-score statistics
-    M0Y <- PCG(X,Y,m.marker,sigma.k2,sigma.e2,tol.pcg,iter.pcg)
-    M0F <- PCG(X,F.fix,m.marker,sigma.k2,sigma.e2,tol.pcg,iter.pcg)
+    if(n.sample <= 1000){
+      M0 <- sigma.k2*tcrossprod(X, X)/m.marker + sigma.e2*diag(n.sample)
+      M0Y <- solve(M0)%*%Y
+      M0F <- solve(M0)%*%F.fix
+    }else{
+      M0Y <- PCG(X,Y,m.marker,sigma.k2,sigma.e2,tol.pcg,iter.pcg)
+      M0F <- PCG(X,F.fix,m.marker,sigma.k2,sigma.e2,tol.pcg,iter.pcg) 
+    }
     
     FtM0F <- solve(crossprod(F.fix, M0F))
     FtM0Y <- crossprod(F.fix, M0Y)
