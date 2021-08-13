@@ -24,7 +24,7 @@ ebayes_EM<-function(x,z,y)
     vv<-vv+tcrossprod(zz,zz)*v[i]
   }
   vv<-vv+diag(n)*v0
-  iter<-0;err<-1000;iter_max<-5000;err_max<-1e-10
+  iter<-0;err<-1000;iter_max<-150;err_max<-1e-6
   tau<-0;omega<-0
   while((iter<iter_max)&&(err>err_max))
   {
@@ -160,7 +160,7 @@ PCG <- function(G,b,m.marker,sigma.k2,sigma.e2,tol,miter){
   return (x) 
 }
 
-ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, B.Moment = 20, tol.pcg = 1e-6, iter.pcg = 500, bin = 100, lod.cutoff = 3.0, dir_out)
+ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, B.Moment = 20, tol.pcg = 1e-4, iter.pcg = 100, bin = 100, lod.cutoff = 3.0, dir_out)
 {
   t.start <- proc.time()
 
