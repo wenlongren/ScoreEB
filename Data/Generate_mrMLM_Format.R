@@ -35,7 +35,7 @@ write.table(mrMLM_geno, paste0(dir1, "mrMLM_Genotype_2000.csv"), sep = ",", quot
 write.table(kin, paste0(dir1, "mrMLM_Kinship_2000.csv"), sep = ",", quote = FALSE, col.names = FALSE, row.names = TRUE)
 
 pheno <- sim_fam[,-c(2:5)]
-colnames(new_pheno) <- c("<Phenotype>", paste("Trait",c(1:(dim(pheno)[2]-1))))
+colnames(pheno) <- c("<Phenotype>", paste("Trait",c(1:(dim(pheno)[2]-1))))
 
 write.table(pheno,paste0(dir1, "mrMLM_Phenotype_2000.csv"), sep = ",", quote = FALSE, row.names = FALSE, col.names = TRUE)
 
