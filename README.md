@@ -15,7 +15,7 @@ phenofile <- paste0(dir_input, "mrMLM.SimPheno1.csv")\
 ScoreEB(genofile, phenofile, popfile = NULL, trait.num = 1, B.Moment = 20, tol.pcg = 1e-6, iter.pcg = 500, bin = 100, lod.cutoff = 3.0, dir_out) 
 
 **Input File Format**\
-Please refer to the mrMLM v4.0.2 (https://cran.r-project.org/web/packages/mrMLM/index.html). ScoreEB2 uses the input file format same with mrMLM v4.0.2. 
+Please refer to the mrMLM v4.0.2 (https://cran.r-project.org/web/packages/mrMLM/index.html). ScoreEB uses the input file format same with mrMLM v4.0.2. 
 
 **Explanation of Input Parameters**\
 **1.** genofile and phenofile are the **required** input file, while popfile is the **optional** input file.\
