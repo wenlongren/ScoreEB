@@ -278,7 +278,15 @@ ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau 
     lod <- likelihood(F.fix,geno.bayes,Y,b.bayes)
     
     result.final <- cbind(find.bin.max, as.matrix(b.bayes), as.matrix(lod))
-    result.final <- result.final[which(result.final[,8]>=lod.cutoff),]
+    select.final <- which(result.final[,8]>=lod.cutoff)
+    if(length(select.final)==0){
+      print(paste0("There is none SNP identified in Trait", jj, "!"))
+      next
+    }else if(length(select.final)==1){
+      result.final <- matrix(unlist(result.final[select.final,]),1,8)
+    }else{
+      result.final <- result.final[select.final,]
+    }
     result.final[,6] <- as.matrix(pchisq(as.numeric(result.final[,8])*4.605,1,lower.tail = FALSE)) 
     result.final <- cbind(result.final, result.final[,6])
     
