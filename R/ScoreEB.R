@@ -1,6 +1,7 @@
 #2010 EM_Bayes
 ebayes_EM<-function(x,z,y,EMB.tau,EMB.omega)
 {
+  tau<-EMB.tau;omega<-EMB.omega
   n<-nrow(z);k<-ncol(z)
   if(abs(min(eigen(crossprod(x,x))$values))<1e-6)
     b<-solve(crossprod(x,x)+diag(ncol(x))*0.01)%*%crossprod(x,y)
@@ -25,7 +26,6 @@ ebayes_EM<-function(x,z,y,EMB.tau,EMB.omega)
   }
   vv<-vv+diag(n)*v0
   iter<-0;err<-1000;iter_max<-100;err_max<-1e-6
-  tau<-EMB.tau;omega<-EMB.omega
   while((iter<iter_max)&&(err>err_max))
   {
     iter<-iter+1
