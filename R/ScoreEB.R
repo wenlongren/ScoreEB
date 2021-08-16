@@ -1,5 +1,5 @@
 #2010 EM_Bayes
-ebayes_EM<-function(x,z,y)
+ebayes_EM<-function(x,z,y,EMB.tau,EMB.omega)
 {
   n<-nrow(z);k<-ncol(z)
   if(abs(min(eigen(crossprod(x,x))$values))<1e-6)
@@ -25,7 +25,7 @@ ebayes_EM<-function(x,z,y)
   }
   vv<-vv+diag(n)*v0
   iter<-0;err<-1000;iter_max<-100;err_max<-1e-6
-  tau<-0;omega<-0
+  tau<-EMB.tau;omega<-EMB.omega
   while((iter<iter_max)&&(err>err_max))
   {
     iter<-iter+1
@@ -160,7 +160,7 @@ PCG <- function(G,b,m.marker,sigma.k2,sigma.e2,tol,miter){
   return (x) 
 }
 
-ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, B.Moment = 20, tol.pcg = 1e-4, iter.pcg = 100, bin = 100, lod.cutoff = 3.0, dir_out)
+ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau = 0, EMB.omega = 0, B.Moment = 20, tol.pcg = 1e-4, iter.pcg = 100, bin = 100, lod.cutoff = 3.0, dir_out)
 {
   t.start <- proc.time()
 
@@ -274,7 +274,7 @@ ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, B.Moment
     
     ##Empirical Bayes and likelihood ratio test
     geno.bayes <- X[,as.numeric(find.bin.max[,2])]
-    b.bayes <- ebayes_EM(F.fix,geno.bayes,Y)
+    b.bayes <- ebayes_EM(F.fix,geno.bayes,Y,EMB.tau,EMB.omega)
     lod <- likelihood(F.fix,geno.bayes,Y,b.bayes)
     
     result.final <- cbind(find.bin.max, as.matrix(b.bayes), as.matrix(lod))
