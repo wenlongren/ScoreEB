@@ -280,7 +280,7 @@ ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau 
     result.final <- cbind(find.bin.max, as.matrix(b.bayes), as.matrix(lod))
     select.final <- which(result.final[,8]>=lod.cutoff)
     if(length(select.final)==0){
-      print(paste0("There is none SNP identified in Trait", jj, "!"))
+      print(paste0("There is no SNP identified in Trait", jj, "!"))
       next
     }else if(length(select.final)==1){
       result.final <- matrix(unlist(result.final[select.final,]),1,8)
