@@ -25,7 +25,7 @@ ebayes_EM<-function(x,z,y,EMB.tau,EMB.omega)
     vv<-vv+tcrossprod(zz,zz)*v[i]
   }
   vv<-vv+diag(n)*v0
-  iter<-0;err<-1000;iter_max<-100;err_max<-1e-6
+  iter<-0;err<-1000;iter_max<-500;err_max<-1e-8
   while((iter<iter_max)&&(err>err_max))
   {
     iter<-iter+1
