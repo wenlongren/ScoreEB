@@ -160,7 +160,7 @@ PCG <- function(G,b,m.marker,sigma.k2,sigma.e2,tol,miter){
   return (x) 
 }
 
-ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau = 0, EMB.omega = 0, B.Moment = 20, tol.pcg = 1e-4, iter.pcg = 100, bin = 100, lod.cutoff = 3.0, dir_out)
+ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau = 0, EMB.omega = 0, B.Moment = 20, tol.pcg = 1e-4, iter.pcg = 100, bin = 100, lod.cutoff = 3.0, seed.num = 10000, dir_out)
 {
   t.start <- proc.time()
 
@@ -191,7 +191,7 @@ ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau 
     Y.center <- scale(Y, center = TRUE, scale = FALSE) 
     
     ##Moment estimation for variance component
-    set.seed(10000)
+    set.seed(seed.num)
     B <- B.Moment
     Zb <- matrix(0,n.sample,B)
     for(i in 1:B)
