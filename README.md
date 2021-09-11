@@ -2,7 +2,9 @@
 **An Efficient Score Test Integrated with Empirical Bayes for Genome-Wide Association Studies**
 
 **Installation**\
-install.packages("remotes")\
+There two ways to install the ScoreEB package, one is installed from **CRAN**(The Comprehensive R Archive Network), and another way is installed from **GitHub**.\
+**1.** install.packages("ScoreEB")\
+**2.** install.packages("remotes")\
 library(remotes)\
 remotes::install_github("wenlongren/ScoreEB")\
 {In some cases, use remotes::install_github("wenlongren/ScoreEB@main")}
@@ -12,7 +14,7 @@ library(ScoreEB)\
 dir_input <- "your file path"\
 genofile <- paste0(dir_input, "mrMLM.Genotype.csv")\
 phenofile <- paste0(dir_input, "mrMLM.SimPheno1.csv")\
-ScoreEB(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau = 0, EMB.omega = 0, B.Moment = 20, tol.pcg = 1e-4, iter.pcg = 100, bin = 100, lod.cutoff = 3.0, dir_out) 
+ScoreEB(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau = 0, EMB.omega = 0, B.Moment = 20, tol.pcg = 1e-4, iter.pcg = 100, bin = 100, lod.cutoff = 3.0, seed.num = 10000, dir_out) 
 
 **Input File Format**\
 Please refer to the mrMLM v4.0.2 (https://cran.r-project.org/web/packages/mrMLM/index.html). ScoreEB uses the input file format same with mrMLM v4.0.2. 
