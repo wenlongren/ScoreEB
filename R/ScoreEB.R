@@ -247,6 +247,32 @@ ScoreEB <- function(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau 
     
     tmp <- crossprod(X, PY)
     t.score <- 0.5*tmp^2
+    
+    ### obtain p value : update code ### 
+    # a.coef <- NULL
+    # set.seed(seed.num)
+    # rand.loci <- sample(c(1:m.marker), 30, replace = FALSE)
+    # for(ss in 1:30){
+    #  if(n.sample <= 1000){
+       # M0 <- sigma.k2*tcrossprod(X, X)/m.marker + sigma.e2*diag(n.sample)
+       # M0X <- solve(M0)%*%as.matrix(X[,rand.loci[ss]])
+      # }else{
+       # M0X <- PCG(X,X[,rand.loci[ss]],m.marker,sigma.k2,sigma.e2,tol.pcg,iter.pcg)
+      # }
+     # FtM0X <- crossprod(F.fix, M0X)
+     # right.part.X <- M0F%*%FtM0F%*%FtM0X
+     # PX <- M0X - right.part.X
+     # XtPX <- crossprod(X[,rand.loci[ss]], PX)
+     # XtX <- crossprod(X[,rand.loci[ss]],X[,rand.loci[ss]])
+     # a.coef <- c(a.coef, (as.numeric(XtPX)/as.numeric(XtX)))
+   # }
+
+   # mean.a.coef <- mean(a.coef)
+   # all.XtX <- colSums(X^2)
+   # all.XtPX <- mean.a.coef*all.XtX
+   # chi.square <- t.score/all.XtPX
+   # p.value <- pchisq(chi.square, 1, lower.tail = FALSE)
+    
     p.value <- pchisq(t.score, 1, lower.tail = FALSE)
     result <- cbind(as.matrix(jj, m.marker), as.matrix(1:m.marker), geno[,2:3], as.matrix(t.score), as.matrix(p.value))
     
