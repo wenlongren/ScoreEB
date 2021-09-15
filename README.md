@@ -27,7 +27,8 @@ Please refer to the mrMLM v4.0.2 (https://cran.r-project.org/web/packages/mrMLM/
 **5.** tol.pcg and iter.pcg are tolerance and maximum iteration number in preconditioned conjugate gradient algorithm.\
 **6.** bin is to choose the maximum score within a certain range.\
 **7.** lod.cutoff is the threshold to determine identified QTNs.\
-**8.** dir_out is the file path to save the results. 
+**8.** seed.num is to set the seed number.\
+**9.** dir_out is the file path to save the results.\
 
 **Explanation of Output Results**\
 **1.** The results file "ScoreEB.Result.csv" has 8 columns, including "Trait", "Id", "Chr", "Pos", "Score", "Beta", "Lod" and "Pvalue". \
