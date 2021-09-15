@@ -12,8 +12,8 @@ remotes::install_github("wenlongren/ScoreEB")\
 **Running Example**\
 library(ScoreEB)\
 dir_input <- "your file path"\
-genofile <- your genotype file\
-phenofile <- your phenotype file\
+genofile <- paste0(dir_input, your genotype file)\
+phenofile <- paste0(dir_input, your phenotype file)\
 ScoreEB(genofile, phenofile, popfile = NULL, trait.num = 1, EMB.tau = 0, EMB.omega = 0, B.Moment = 20, tol.pcg = 1e-4, iter.pcg = 100, bin = 100, lod.cutoff = 3.0, seed.num = 10000, dir_out) 
 
 **Input File Format**\
