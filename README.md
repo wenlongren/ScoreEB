@@ -34,3 +34,6 @@ Please refer to the mrMLM v4.0.2 (https://cran.r-project.org/web/packages/mrMLM/
 **1.** The results file "ScoreEB.Result.csv" has 8 columns, including "Trait", "Id", "Chr", "Pos", "Score", "Beta", "Lod" and "Pvalue". \
 **Note:** "Pvalue" is corresponding to the "Lod" obtained by R function pchisq(Lodx4.605,1,lower.tail=FALSE).\
 **2.** The time file "ScoreEB.time.csv" includes 3 rows, which are "User", "System", "Elapse" time, respectively.
+
+**Higher Performance**
+To achieve **higher performance**, we recommend users run ScoreEB on **Microsoft R Open 4.0.2** (https://mran.microsoft.com/open).
