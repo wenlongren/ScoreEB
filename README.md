@@ -37,3 +37,6 @@ Please refer to the mrMLM v4.0.2 (https://cran.r-project.org/web/packages/mrMLM/
 
 **Higher Performance**\
 To achieve **higher performance**, we recommend users run ScoreEB on **Microsoft R Open 4.0.2** (https://mran.microsoft.com/open).
+
+**Please refer:**\
+Xiao J, Zhou Y, He S and Ren W-L (2021) An Efficient Score Test Integrated with Empirical Bayes for Genome-Wide Association Studies. Front. Genet. 12:742752. doi: 10.3389/fgene.2021.742752
